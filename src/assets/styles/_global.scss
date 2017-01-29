@@ -1,26 +1,7 @@
-.grid__container {
-  display: flex;  
-  flex-direction: column;
-}
+html {
+  font-size: 5px;
 
-.grid__row {
-  display: flex;  
-  flex-direction: row;
-}
-
-.grid__column {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex; 
-
-  flex: 1;
-}
-
-.hide__md {
-  display: none;
   @media (#{$bp-larger-than-desktop}){
-    display: initial;
+    font-size: 10px;
   }
 }
