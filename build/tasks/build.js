@@ -8,7 +8,8 @@ const gulp     	= require('gulp'),
   source        = require('vinyl-source-stream'),
   glob          = require('glob'),
   rename        = require('gulp-rename'),
-  es            = require('event-stream');
+  es            = require('event-stream'),
+  autoprefixer = require('gulp-autoprefixer');
 
 // compiles nunjucks
 gulp.task('build-html', function () { 
@@ -50,6 +51,7 @@ gulp.task('build-css', function() {
     .pipe(sass({
     		outputStyle: 'compressed'
 		}).on('error', sass.logError))
+    .pipe(autoprefixer())
     .pipe(gulp.dest(paths.output + "assets/styles/"))
     .pipe(browserSync.stream());
 });
