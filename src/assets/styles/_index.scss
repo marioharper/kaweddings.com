@@ -1,0 +1,46 @@
+html, body, main {
+  height: 100%;
+}
+
+body#index {
+  background: url(/assets/images/background.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  background-size: cover;
+
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  margin: 0;
+}
+
+main {
+  .logo {
+    flex-grow: 1; // push footer to bottom
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+
+    h1 {
+      margin: auto;
+      text-align: center;
+      font-weight: 100;
+      font-style: normal;
+      @media (#{$bp-larger-than-desktop}){
+        margin-left: 0;
+      }
+    }
+  }
+
+  .footer {
+    font-size: 60px;
+    font-weight: normal;
+    font-family: 'Tangerine', cursive;
+    text-align: center;
+    padding-bottom: 20px;
+
+    p {
+      margin: auto;
+    }
+  }
+}
