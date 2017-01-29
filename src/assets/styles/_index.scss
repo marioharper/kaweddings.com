@@ -1,9 +1,9 @@
-html, body, main {
+html, body {
   height: 100%;
 }
 
 body#index {
-  background: url(/assets/images/background.jpeg) no-repeat center center fixed; 
+  background: url(/assets/images/background.jpg) no-repeat center center fixed; 
   background-position-x: 20%;
   background-size: cover;
 
@@ -11,13 +11,19 @@ body#index {
 }
 
 main {
+  height: 100%;
+  min-height: 500px;
+  
+  .form {
+    height: 80%;
+  }
+
   header {
+    height: 20%;
     color: #fff;
     font-weight: normal;
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
-    position: fixed;
-    bottom: 0;
     width: 100%;
 
     h1 {

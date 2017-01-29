@@ -3,9 +3,12 @@
   max-width: 400px;
   width: 100%;
   position: relative;
-  top: 20vh;
+  top: 100px; 
   margin: auto;
-  margin-right: 15%;
+
+  @media (#{$bp-larger-than-phablet}){
+    margin-right: 15%;
+  }
 
   * {
     box-sizing: border-box;
