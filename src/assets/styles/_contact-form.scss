@@ -5,7 +5,7 @@
   position: relative;
   margin: auto;
 
-  @media (#{$bp-larger-than-phablet}){
+  @media (#{$bp-larger-than-desktop}){
     margin-right: 15%;
   }
 
