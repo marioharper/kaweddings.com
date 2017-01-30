@@ -15,19 +15,21 @@
 
   <main>
     <div class="form">
-      <form id="contact" action="" method="post">
+      <form id="contact" action="https://formspree.io/kclev@gmail.com" method="post">
         <h2>Contact Kelsey</h2>
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_subject" value="www.kaweddings.com contact form submission" />
         <fieldset>
-          <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+          <input placeholder="Your name" name="name" type="text" tabindex="1" required autofocus>
         </fieldset>
         <fieldset>
-          <input placeholder="Your Email Address" type="email" tabindex="2" required>
+          <input placeholder="Your Email Address" name="_replyto" type="text" tabindex="2" required>
         </fieldset>
         <fieldset>
-          <textarea placeholder="Hey, Kelsey ..." tabindex="3" required></textarea>
+          <textarea placeholder="Hey, Kelsey ..." name="message" tabindex="3" required></textarea>
         </fieldset>
         <fieldset>
-          <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+          <button name="submit" type="submit" id="contact-submit" value="Send">Submit</button>
         </fieldset>
       </form>
     </div>
