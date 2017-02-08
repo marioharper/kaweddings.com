@@ -2,7 +2,12 @@ html {
   font-size: 5px;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  line-height: 30px;
+  color: #777;
+  background-color: white;
+  
   @media (#{$bp-larger-than-desktop}){
     font-size: 10px;
   }
