@@ -1,3 +1,23 @@
+#menu {
+  ul.social-icons {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    padding-right: 30px;
+    font-size: 24px;
+
+    li {
+      display: inline-block;
+      padding: 3px;
+    }
+  }
+
+  #curveDownColor path {
+    fill: #C7D6CF;
+    stroke: #C7D6CF;
+  }
+}
+
 menu#responsive-menu {
   @media (#{$bp-larger-than-tablet}){
     display: none;
@@ -12,7 +32,6 @@ menu {
   background-color: white;
   width: 100%;
   font-size: 24px;
-  color: black;
   
   &#main-menu{
     display: none;

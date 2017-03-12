@@ -3,6 +3,13 @@ body#index {
   height: 100%;
 
   main {
+    margin: auto;
+    
+    section {
+      padding: 60px 0 0 0;
+      margin: auto;
+    }
+
     section.hero {
       max-width: 1100px;
       margin: 0 auto;
@@ -10,13 +17,9 @@ body#index {
       background-position-x: 20%;
       background-size: cover;
       min-height: 600px;
-      display: flex;
-      align-items: flex-end;
     }
 
     section.quote {
-      padding: 60px 0;
-
       header {
         color: black;
         font-weight: normal;
@@ -34,6 +37,25 @@ body#index {
           font-family: 'Dancing Script', cursive;
         }
       }
+    }
+
+    section.welcome {
+      padding: 60px 60px; 
+      background-color: #C7D6CF;  
+
+      .wrapper {
+        margin: auto;
+        max-width: 1100px;
+      }
+    }
+  }
+
+  #curveUpColor {
+    margin-bottom: -10px;
+
+    path {
+      fill: #C7D6CF;
+      stroke: #C7D6CF;
     }
   }
 }
