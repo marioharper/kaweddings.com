@@ -1,5 +1,5 @@
 html {
-  font-size: 10px;
+  font-size: 8px;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -9,6 +9,10 @@ html {
   background-color: white;
   margin: 0;
   height: 100%;
+  
+  @media (#{$bp-larger-than-tablet}){
+    font-size: 10px;
+  }
 }
 
 body {

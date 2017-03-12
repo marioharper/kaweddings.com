@@ -4,11 +4,12 @@ body#index {
 
   main {
     section.hero {
-      background: url(/assets/images/background.jpg) no-repeat center center fixed;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: url(/assets/images/background.jpg) no-repeat center center;
       background-position-x: 20%;
       background-size: cover;
       min-height: 600px;
-      height: 100vh;
       display: flex;
       align-items: flex-end;
     }
