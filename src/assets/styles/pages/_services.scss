@@ -1,10 +1,23 @@
 body#services {
+  #curveUpColor {
+    margin-bottom: -10px;
+
+    path {
+      fill: #C7D6CF;
+      stroke: #C7D6CF;
+    }
+  }
+
   main {
-    max-width: 1100px;
+    background-color: #C7D6CF;
     margin: auto;
     text-align: center;
     padding: 20px;
 
+    .wrapper {
+      max-width: 900px;
+      margin: auto;
+    }
     section {
       text-align: left;
     }
