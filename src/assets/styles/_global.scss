@@ -1,5 +1,5 @@
 html {
-  font-size: 5px;
+  font-size: 10px;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -7,8 +7,11 @@ html {
   line-height: 30px;
   color: #777;
   background-color: white;
-  
-  @media (#{$bp-larger-than-desktop}){
-    font-size: 10px;
-  }
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }

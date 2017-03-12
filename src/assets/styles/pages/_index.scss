@@ -1,0 +1,38 @@
+body#index {
+  margin: 0;
+  height: 100%;
+
+  main {
+    section.hero {
+      background: url(/assets/images/background.jpg) no-repeat center center fixed;
+      background-position-x: 20%;
+      background-size: cover;
+      min-height: 600px;
+      height: 100vh;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    section.quote {
+      padding: 60px 0;
+
+      header {
+        color: black;
+        font-weight: normal;
+        font-family: 'Josefin Sans', sans-serif;
+        text-align: center;
+        width: 100%;
+
+        h1 {
+          text-align: center;
+          margin: 0;
+          padding: 10px 30px;
+          font-size: 3rem;
+          line-height: 5rem;
+          font-weight: 100;
+          font-family: 'Dancing Script', cursive;
+        }
+      }
+    }
+  }
+}
