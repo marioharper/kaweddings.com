@@ -18,12 +18,6 @@
   }
 }
 
-menu#responsive-menu {
-  @media (#{$bp-larger-than-tablet}){
-    display: none;
-  }
-}
-
 menu {
   display: inline-block;
   font-family: 'Josefin Sans', sans-serif;
@@ -43,6 +37,10 @@ menu {
 
     ul {
       display: inline-block;
+
+      li {
+        padding: 12px;
+      }
     }
   }
 
