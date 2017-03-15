@@ -1,0 +1,19 @@
+body#about {
+  section.about {
+    text-align: center;
+
+    @media (#{$bp-larger-than-tablet}){
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      padding: 5px;
+    }
+
+    img {
+      padding: 40px;
+    }
+  }
+}

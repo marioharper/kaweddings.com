@@ -4,15 +4,8 @@ body#index {
 
   main {
     margin: auto;
-    
-    section {
-      padding: 60px 0 0 0;
-      margin: auto;
-    }
 
     section.hero {
-      max-width: 1100px;
-      margin: 0 auto;
       background: url(/assets/images/background.jpg) no-repeat center center;
       background-position-x: 20%;
       background-size: cover;
@@ -20,34 +13,19 @@ body#index {
     }
 
     section.quote {
-      header {
-        color: black;
-        font-weight: normal;
-        font-family: 'Josefin Sans', sans-serif;
-        text-align: center;
-        width: 100%;
+      text-align: center;
 
-        h1 {
-          text-align: center;
-          margin: 0;
-          padding: 10px 30px;
-          font-size: 3rem;
-          line-height: 5rem;
-          font-weight: 100;
-          font-family: 'Dancing Script', cursive;
-        }
+      q {
+        padding: 10px 30px;
+        font-size: 3rem;
+        line-height: 5rem;
+        font-weight: 100;
+        font-family: 'Dancing Script', cursive;
       }
     }
 
     section.welcome {
-      padding: 60px 60px; 
       background-color: #C7D6CF;  
-      font-size: 2rem;
-
-      .wrapper {
-        margin: auto;
-        max-width: 1100px;
-      }
     }
   }
 
