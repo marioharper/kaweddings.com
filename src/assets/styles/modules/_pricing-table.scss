@@ -8,10 +8,6 @@
       display: flex;
   }
 
-  .grey {
-    background-color: #eee;
-  }
-
   /* Create three columns of equal width */
   .service {
     border-radius: 20px;
@@ -21,7 +17,7 @@
     margin: 8px;
     background-color: white;
 
-    &:not(:last-child) {
+    &:not(:last-child) {https://fonts.google.com/
       margin-bottom: 60px;
     }
 
