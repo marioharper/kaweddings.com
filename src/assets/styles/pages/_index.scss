@@ -10,12 +10,26 @@ body#index {
       background-position-x: 20%;
       background-size: cover;
       min-height: 600px;
+      margin-bottom: 100px;
+    }
+
+    hr {
+      width: 50%;
+      max-width: 600px;
+      height: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: $gold;
+      color: $gold;
+      border: 0 none;
+      margin-top: 5px;
+      margin-bottom:5px;
     }
 
     section.quote {
       text-align: center;
-      padding-top: 100px;
-      padding-bottom: 100px;
+      padding-top: 60px;
+      padding-bottom: 60px;
 
       q {
         padding: 10px 30px;
@@ -28,7 +42,7 @@ body#index {
 
     section.welcome {
       padding-top: -20px;
-      background-color: #C7D6CF;  
+      background-color: $mint;  
 
       p {
         margin-top: -40px;
@@ -38,10 +52,11 @@ body#index {
 
   #curveUpColor {
     margin-bottom: -12px;
-
+    margin-top: 100px;
+    
     path {
-      fill: #C7D6CF;
-      stroke: #C7D6CF;
+      fill: $mint;
+      stroke: $mint;
     }
   }
 }
