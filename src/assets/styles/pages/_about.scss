@@ -2,7 +2,8 @@ body#about {
   section.about {
     text-align: center;
     padding-top: 0;
-
+    margin-bottom: 100px;
+    
     @media (#{$bp-larger-than-tablet}){
       text-align: left;
       display: flex;
@@ -15,7 +16,12 @@ body#about {
     }
 
     img {
-      padding: 0 40px;
+      padding-bottom: 40px;
+
+      @media (#{$bp-larger-than-tablet}){
+        padding: 0;
+        padding-right: 80px;
+      }
     }
   }
 }

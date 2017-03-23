@@ -14,6 +14,8 @@ body#index {
 
     section.quote {
       text-align: center;
+      padding-top: 100px;
+      padding-bottom: 100px;
 
       q {
         padding: 10px 30px;
@@ -25,7 +27,12 @@ body#index {
     }
 
     section.welcome {
+      padding-top: -20px;
       background-color: #C7D6CF;  
+
+      p {
+        margin-top: -40px;
+      }
     }
   }
 

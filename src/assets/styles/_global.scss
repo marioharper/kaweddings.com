@@ -2,7 +2,7 @@ html {
   font-size: 10px;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 100;
   line-height: 30px;
   color: #090909;
@@ -16,7 +16,6 @@ body {
   padding: 0;
   font-size: 1.6rem;
   color: #090909;
-  font-family: 'Josefin Sans', sans-serif;
   line-height: 26px;
   font-style: normal;
   font-weight: 300;
@@ -30,12 +29,20 @@ body {
   }
 
   h1 {
+    font-family: 'Josefin Sans', sans-serif;
     text-align: center;
-    font-size: 4rem;
+    font-size: 7rem;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+    line-height: 60px;
   }
 
   p {
     font-size: 1.8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
   }
 }
 

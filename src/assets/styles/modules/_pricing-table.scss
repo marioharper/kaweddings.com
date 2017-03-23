@@ -42,14 +42,13 @@
 
     ul.price {
       list-style-type: none;
-      border: 1px solid #eee;
       margin: 0;
       padding: 0;
       -webkit-transition: 0.3s;
       transition: 0.3s;
 
       .header {
-        background-color: #111;
+        background-color: #F6A9A3;
         color: white;
         font-size: 25px;
       }
@@ -83,7 +82,7 @@
     }
 
     .button {
-      background-color: #4CAF50;
+      background-color: #60C7D6;
       border: none;
       color: white;
       padding: 10px 25px;

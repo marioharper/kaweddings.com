@@ -9,7 +9,7 @@
   <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
   <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo2.png">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Tangerine" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans:300,400|Tangerine|Dancing+Script" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
 </head>
 
@@ -18,7 +18,7 @@
 
   <h1>Contact Kelsey</h1>
 
-  <main>    
+  <main>
     <div class="form">
       <form id="contact" action="https://formspree.io/kclev89@gmail.com" method="post">
         <input type="text" name="_gotcha" style="display:none" />
@@ -41,7 +41,7 @@
         </fieldset>
         <fieldset>
           <label for="service">Service</label>
-          <input name="service" type="text">
+          <input name="service" id="service" type="text">
         </fieldset>
         <fieldset>
           <label for="budget">Event Budget*</label>
@@ -67,5 +67,34 @@
   </main>
 
   {% include "partials/_footer-scripts.html" %}
+
+  <script>
+    (function () {
+      var serviceInput = document.getElementById('service');
+      var service = getQuery('service');
+
+      if(service) {
+        var prefillService = "";
+
+        switch (service) {
+          case 'day-of':
+            prefillService = "Day-of Coordination";
+            break;
+          case 'coordination':
+            prefillService = "Coordination";
+            break;
+          case 'full': 
+            prefillService = "Complete Experience";
+        }
+
+        serviceInput.value = prefillService;
+      }
+
+      function getQuery(q) {
+        return (window.location.search.match(new RegExp('[?&]' + q + '=([^&]+)')) || [, null])[1];
+      }
+    })();
+  </script>
 </body>
+
 </html>
