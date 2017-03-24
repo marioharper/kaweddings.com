@@ -89,6 +89,7 @@ menu {
     position: relative;
     z-index: 100;
     top: 0;
+    font-family: 'Alex Brush', cursive;
 
     @media (#{$bp-larger-than-tablet}){
       vertical-align: middle;

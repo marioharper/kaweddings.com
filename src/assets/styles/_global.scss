@@ -29,7 +29,7 @@ body {
   }
 
   h1 {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Italianno', cursive;
     text-align: center;
     font-size: 7rem;
     font-weight: 400;
@@ -43,6 +43,19 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     font-style: normal;
+  }
+
+  hr {
+    width: 50%;
+    max-width: 600px;
+    height: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $gold;
+    color: $gold;
+    border: 0 none;
+    margin-top: 5px;
+    margin-bottom:5px;
   }
 }
 
