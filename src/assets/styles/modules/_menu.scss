@@ -22,7 +22,6 @@ menu {
   display: inline-block;
   margin: 0;
   padding: 0;
-  padding-bottom: 20px;
   background-color: white;
   width: 100%;
   font-size: 24px;
@@ -90,6 +89,7 @@ menu {
     z-index: 100;
     top: 0;
     font-family: 'Alex Brush', cursive;
+    font-size: 3rem;
 
     @media (#{$bp-larger-than-tablet}){
       vertical-align: middle;
