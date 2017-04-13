@@ -16,8 +16,9 @@ const gulp = require('gulp'),
 // compiles nunjucks
 gulp.task('build-html', function () {
   var galleries = {
-    'sara-and-daniel': {
+    'sarah-and-daniel': {
       name: 'Sarah & Daniel',
+      coverIdx: 4,
       images: [
         { large: { src: '/assets/images/gallery/sarah-and-daniel/1-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/1-300x450.jpg', width: 300, height: 450 } },
         { large: { src: '/assets/images/gallery/sarah-and-daniel/2-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/2-300x450.jpg', width: 300, height: 450 } },

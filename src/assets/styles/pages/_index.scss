@@ -6,10 +6,11 @@ body#index {
     margin: auto;
 
     section.hero {
-      background: url(/assets/images/background.jpg) no-repeat center center;
-      background-position-x: 20%;
+      background: url(/assets/images/background-1000x666.jpg) no-repeat center center;
+      background-position-x: 45%;
+      background-position-y: 10%;
       background-size: cover;
-      min-height: 600px;
+      height: 450px;
       margin-bottom: 100px;
     }
 

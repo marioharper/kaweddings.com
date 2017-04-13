@@ -8,7 +8,7 @@
 
 </head>
 
-<body id="gallery">
+<body id="galleries">
 
   {% include "partials/_menu.html" %}
 
@@ -16,10 +16,14 @@
 
   <hr />
 
-  <main>
-
-    <a href="/gallery/sarah-and-daniel.html">Sarah & Daniel</a>
-
+  <main class="content-wrapper">
+    <a class="img-link" href="/gallery/sarah-and-daniel.html">
+      <img src={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.src}} 
+        width={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.width}} 
+        height={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.height}} />
+    </a>
+    
+    <p>{{galleries['sarah-and-daniel'].name}}</p>
   </main>
 
   {% include "partials/_footer-scripts.html" %}

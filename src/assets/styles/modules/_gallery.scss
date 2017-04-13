@@ -12,10 +12,18 @@
   
   .grid-sizer,
   .grid-item {
-    width: 50%;
+    width: 100%;
+
+    @media (#{$bp-larger-than-phablet}){
+      width: 50%;
+    } 
 
     @media (#{$bp-larger-than-tablet}){
       width: 33.3333%;
+    }
+
+    img {
+      margin: auto;
     }
   }
   

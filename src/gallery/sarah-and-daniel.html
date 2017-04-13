@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title> Kelsey Anne Weddings - Wedding Planning</title>
-  <meta name="description" content="Kelsey Anne Weddings"> {% include "partials/_header-scripts.html" %}
+  <meta name="description" content="Kelsey Anne Weddings"> 
+  
+  {% include "partials/_header-scripts.html" %}
 
   <!-- Core CSS file -->
   <link rel="stylesheet" href="/assets/vendor/photoswipe/photoswipe.css">
@@ -26,9 +28,10 @@
 
   {% include "partials/_menu.html" %}
 
-  <h1>{{galleries['sara-and-daniel'].name}}</h1>
-
+  <h1>{{galleries['sarah-and-daniel'].name}}</h1>  
   <hr />
+
+  <p style="text-align: center;">July 11, 2015 // Leigh G Photography</p>
 
   </div>
 
@@ -37,7 +40,7 @@
     <div class="grid my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
       <div class="grid-sizer"></div>
 
-      {% for image in galleries['sara-and-daniel'].images %}
+      {% for image in galleries['sarah-and-daniel'].images %}
       <figure class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
         <a href={{image.large.src}} itemprop="contentUrl" data-size={{image.large.width + 'x' + image.large.height}}>
           <img src={{image.small.src}} itemprop="thumbnail" alt="Image description" width={{image.small.width}} height={{image.small.height}}/>
