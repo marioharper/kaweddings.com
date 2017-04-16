@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Kelsey Anne Weddings - Wedding Planning</title>
+  <meta name="description" content="Kelsey Anne Weddings">
+  
+  {% include "partials/_header-scripts.html" %}
+
+</head>
+
+<body id="contact">
+  {% include "partials/_menu.html" %}
+
+  <h1>Contact Kelsey</h1>
+
+  <hr />
+
+  <main>
+    <div class="form">
+      <form id="contact" action="https://formspree.io/kclev89@gmail.com" method="post">
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_subject" value="www.kaweddings.com contact form submission" />
+        <fieldset>
+          <label for="name">Name*</label>
+          <input placeholder="Your name" name="name" type="text" required>
+        </fieldset>
+        <fieldset>
+          <label for="_replyto">Email*</label>
+          <input placeholder="Your email address" name="_replyto" type="text" required>
+        </fieldset>
+        <fieldset>
+          <label for="phone">Phone Number*</label>
+          <input placeholder="555-555-5555" name="phone" type="phone" required>
+        </fieldset>
+        <fieldset>
+          <label for="event-date">Event Date*</label>
+          <input name="event-date" type="date" required>
+        </fieldset>
+        <fieldset>
+          <label for="service">Service</label>
+          <input name="service" id="service" type="text">
+        </fieldset>
+        <fieldset>
+          <label for="budget">Event Budget*</label>
+          <input name="budget" type="number" required>
+        </fieldset>
+        <fieldset>
+          <label for="theme">Event Theme*</label>
+          <input name="theme" type="text" required>
+        </fieldset>
+        <fieldset>
+          <label for="theme">Referrer*</label>
+          <textarea placeholder="How did you hear about me? (Please be specific)" name="referrer" required></textarea>
+        </fieldset>
+        <fieldset>
+          <label for="theme">Message</label>
+          <textarea placeholder="Hey, Kelsey ..." name="message"></textarea>
+        </fieldset>
+        <fieldset>
+          <button name="submit" type="submit" id="contact-submit" value="Send">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+
+  {% include "partials/_footer-scripts.html" %}
+
+  <script>
+    (function () {
+      var serviceInput = document.getElementById('service');
+      var service = getQuery('service');
+
+      if(service) {
+        var prefillService = "";
+
+        switch (service) {
+          case 'day-of':
+            prefillService = "Day-of Coordination";
+            break;
+          case 'coordination':
+            prefillService = "Coordination";
+            break;
+          case 'full': 
+            prefillService = "Complete Experience";
+        }
+
+        serviceInput.value = prefillService;
+      }
+
+      function getQuery(q) {
+        return (window.location.search.match(new RegExp('[?&]' + q + '=([^&]+)')) || [, null])[1];
+      }
+    })();
+  </script>
+</body>
+
+</html>

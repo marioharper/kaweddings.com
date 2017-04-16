@@ -5,47 +5,54 @@
   <meta charset="UTF-8">
   <title> Kelsey Anne Weddings - Wedding Planning</title>
   <meta name="description" content="Kelsey Anne Weddings">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/images/logo2.png">
-  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Tangerine" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
+  {% include "partials/_header-scripts.html" %}
+
 </head>
 
 <body id="index">
-  <menu>
-    <img class="logo" src="/assets/images/logo.png" alt="kelsey anne weddings logo" width="120"></img>
-  </menu>
+  {% include "partials/_menu.html" %}
+
+  <h1>Kelsey Anne Weddings</h1>
 
   <main>
-    <section class="hero">
-      <header>
-        <h1>Kelsey Anne Weddings</h1>
-      </header>
+    <section class="hero content-wrapper">
     </section>
 
-    <section class="contact">
-      <div class="form">
-        <form id="contact" action="https://formspree.io/kclev89@gmail.com" method="post">
-          <h2>Contact Kelsey</h2>
-          <input type="text" name="_gotcha" style="display:none" />
-          <input type="hidden" name="_subject" value="www.kaweddings.com contact form submission" />
-          <fieldset>
-            <input placeholder="Your name" name="name" type="text" tabindex="1" required>
-          </fieldset>
-          <fieldset>
-            <input placeholder="Your Email Address" name="_replyto" type="text" tabindex="2" required>
-          </fieldset>
-          <fieldset>
-            <textarea placeholder="Hey, Kelsey ..." name="message" tabindex="3" required></textarea>
-          </fieldset>
-          <fieldset>
-            <button name="submit" type="submit" id="contact-submit" value="Send">Submit</button>
-          </fieldset>
-        </form>
+    <hr>
+
+    <section class="quote content-wrapper">
+      <q>The most beautiful things in the world cannot be seen or touched, they are felt with the heart.</q>
+      <br>
+      <small>-The Little Prince</small>
+    </section>
+
+    <hr>
+    
+    <svg id="curveUpColor" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="80" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <path d="M0 100 C 20 0 50 0 100 100 Z"></path>
+    </svg>
+
+    <section class="welcome">
+      <div class="content-wrapper">
+        <p>
+          Hello & Welcome!
+          </br>
+          </br>
+          &nbsp;&nbsp;&nbsp;&nbsp;Your wedding day is a special chapter in your life. You have dreamt about it ever since you were
+          little. It’s important to you that everything goes the way you have envisioned, and is in fact the best day of
+          your life. Kelsey Anne Weddings is here to make this happen for you! I want to take away the stress so you can
+          enjoy this moment with the love of your life. It’s not just important to you but it will be important to me as
+          well.
+          </br>
+          </br>
+          - Kelsey Anne
+        </p>
       </div>
     </section>
-</main>
+  </main>
+
+  {% include "partials/_footer-scripts.html" %}
 </body>
 
 </html>

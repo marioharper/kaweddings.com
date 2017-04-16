@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Kelsey Anne Weddings - Wedding Planning</title>
+  <meta name="description" content="Kelsey Anne Weddings"> 
+  
+  {% include "partials/_header-scripts.html" %}
+
+  <!-- Core CSS file -->
+  <link rel="stylesheet" href="/assets/vendor/photoswipe/photoswipe.css">
+
+  <!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+     In the folder of skin CSS file there are also:
+     - .png and .svg icons sprite, 
+     - preloader.gif (for browsers that do not support CSS animations) -->
+  <link rel="stylesheet" href="/assets/vendor/photoswipe/default-skin/default-skin.css">
+
+  <!-- Core JS file -->
+  <script src="/assets/vendor/photoswipe/photoswipe.min.js"></script>
+
+  <!-- UI JS file -->
+  <script src="/assets/vendor/photoswipe/photoswipe-ui-default.min.js"></script>
+</head>
+
+<body class="gallery">
+
+  {% include "partials/_menu.html" %}
+
+  <h1>{{galleries['sarah-and-daniel'].name}}</h1>  
+  <hr />
+
+  <p style="text-align: center;">July 11, 2015 // Leigh G Photography</p>
+
+  </div>
+
+  <main class="content-wrapper">
+
+    <div class="grid my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+      <div class="grid-sizer"></div>
+
+      {% for image in galleries['sarah-and-daniel'].images %}
+      <figure class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <a href={{image.large.src}} itemprop="contentUrl" data-size={{image.large.width + 'x' + image.large.height}}>
+          <img src={{image.small.src}} itemprop="thumbnail" alt="Image description" width={{image.small.width}} height={{image.small.height}}/>
+        </a>
+      </figure>
+      {% endfor %}
+
+    </div>
+
+    {% include "partials/_photoswipe.html" %}
+
+  </main>
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/vendor/vanilla-lazyload/lazyload.min.js"></script>
+  {% include "partials/_footer-scripts.html" %}
+  {% include "partials/_photoswipe-from-dom-script.html" %}
+  <script>
+    (function () {
+      var imageGrid = document.querySelector('.grid');
+
+      var msnry = new Masonry(imageGrid, {
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        columnWidth: '.grid-sizer'
+      });
+
+      var myLazyLoad = new LazyLoad({
+        callback_load: function () {
+          msnry.layout();
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>

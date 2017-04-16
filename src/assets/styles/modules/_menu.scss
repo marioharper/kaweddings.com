@@ -1,0 +1,136 @@
+#menu {
+  ul.social-icons {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    padding-right: 30px;
+    font-size: 24px;
+
+    li {
+      display: inline-block;
+      padding: 3px;
+    }
+  }
+
+  #curveDownColor path {
+    fill: $mint;
+    stroke: $mint;
+  }
+}
+
+menu {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  width: 100%;
+  font-size: 24px;
+  
+  &#main-menu{
+    display: none;
+
+    @media (#{$bp-larger-than-tablet}){
+      display: inline-block;
+      text-align: center;
+    }
+
+    ul {
+      display: inline-block;
+
+      li {
+        padding: 12px;
+      }
+    }
+  }
+
+  &#responsive-menu{
+    text-align: left;
+
+    @media (#{$bp-larger-than-tablet}){
+      display: none;
+    }
+
+    &.open {
+      box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+
+      ul {
+        li {
+          padding-left: 15px;
+          display: block;
+          float: none;
+          text-align: left;
+
+          @media (#{$bp-larger-than-tablet}){
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .logo {
+      position: absolute;
+      top: 45px;
+
+      img{
+        width: 100px;
+      }
+    }
+
+    .responsive-icon {
+      float: right;
+      margin-right: 20px;
+
+      @media (#{$bp-larger-than-tablet}){
+        display: none;
+      }
+    }
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 14px 16px;
+    font-family: 'Alex Brush', cursive;
+    font-size: 3.2rem;
+  }
+
+  .logo {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+    top: 0;
+    font-family: 'Alex Brush', cursive;
+    font-size: 3rem;
+
+    @media (#{$bp-larger-than-tablet}){
+      vertical-align: middle;
+      left: auto;
+    }
+    
+    img {
+      background-color: white;
+      width: 160px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {     
+      display: none;
+
+      @media (#{$bp-larger-than-tablet}){
+        display: inline-block;
+      }
+      a {
+        display: inline-block;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

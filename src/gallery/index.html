@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title> Kelsey Anne Weddings - Wedding Planning</title>
+  <meta name="description" content="Kelsey Anne Weddings"> {% include "partials/_header-scripts.html" %}
+
+</head>
+
+<body id="galleries">
+
+  {% include "partials/_menu.html" %}
+
+  <h1>Gallery</h1>
+
+  <hr />
+
+  <main class="content-wrapper">
+    <a class="img-link" href="/gallery/sarah-and-daniel.html">
+      <img src={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.src}} 
+        width={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.width}} 
+        height={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.height}} />
+    </a>
+    
+    <p>{{galleries['sarah-and-daniel'].name}}</p>
+  </main>
+
+  {% include "partials/_footer-scripts.html" %}
+
+</body>
+
+</html>

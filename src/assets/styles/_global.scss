@@ -1,14 +1,66 @@
 html {
-  font-size: 5px;
+  font-size: 10px;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 100;
   line-height: 30px;
-  color: #777;
+  color: #090909;
   background-color: white;
-  
-  @media (#{$bp-larger-than-desktop}){
-    font-size: 10px;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  color: #090909;
+  line-height: 26px;
+  font-style: normal;
+  font-weight: 300;
+
+  main {
+    padding: 20px 0 0 0;
   }
+
+  a {
+    color: #090909;
+  }
+
+  h1 {
+    font-family: 'Italianno', cursive;
+    text-align: center;
+    font-size: 7rem;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 20px;
+    line-height: 60px;
+  }
+
+  p {
+    font-size: 1.8rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  hr {
+    width: 50%;
+    max-width: 600px;
+    height: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $gold;
+    color: $gold;
+    border: 0 none;
+    margin-top: 5px;
+    margin-bottom:5px;
+  }
+}
+
+.content-wrapper {
+  padding: 30px;
+  max-width: 900px;
+  margin: auto;
 }

@@ -1,0 +1,39 @@
+.gallery {
+
+  figure {
+    margin: 0;
+  }
+
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+
+    @media (#{$bp-larger-than-phablet}){
+      width: 50%;
+    } 
+
+    @media (#{$bp-larger-than-tablet}){
+      width: 33.3333%;
+    }
+
+    img {
+      margin: auto;
+    }
+  }
+  
+  .grid-item {
+    float: left;
+  }
+  
+  .grid-item img {
+    display: block;
+    max-width: 100%;
+  }
+
+}

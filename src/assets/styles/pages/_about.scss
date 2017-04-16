@@ -1,0 +1,27 @@
+body#about {
+  section.about {
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 100px;
+    
+    @media (#{$bp-larger-than-tablet}){
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      padding: 0 5px;
+      margin: 0;
+    }
+
+    img {
+      padding-bottom: 40px;
+
+      @media (#{$bp-larger-than-tablet}){
+        padding: 0;
+        padding-right: 80px;
+      }
+    }
+  }
+}
