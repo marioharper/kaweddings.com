@@ -28,10 +28,10 @@
 
   {% include "partials/_menu.html" %}
 
-  <h1>{{galleries['sarah-and-daniel'].name}}</h1>  
+  <h1>{{gallery.fields.title}}</h1>  
   <hr />
 
-  <p style="text-align: center;">July 11, 2015 // Leigh G Photography</p>
+  <p style="text-align: center;">{{gallery.fields.description}}</p>
 
   </div>
 
@@ -40,10 +40,10 @@
     <div class="grid my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
       <div class="grid-sizer"></div>
 
-      {% for image in galleries['sarah-and-daniel'].images %}
+      {% for image in gallery.fields.photos %}
       <figure class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-        <a href={{image.large.src}} itemprop="contentUrl" data-size={{image.large.width + 'x' + image.large.height}}>
-          <img src={{image.small.src}} itemprop="thumbnail" alt="Image description" width={{image.small.width}} height={{image.small.height}}/>
+        <a href={{image.fields.file.url + '?w=1000'}} itemprop="contentUrl" data-size={{1000 + 'x' + ((image.fields.file.details.image.height * (1000 / image.fields.file.details.image.width)) | round)}}>
+          <img src={{image.fields.file.url + '?w=300'}} itemprop="thumbnail" alt="Image description" width="300" />
         </a>
       </figure>
       {% endfor %}

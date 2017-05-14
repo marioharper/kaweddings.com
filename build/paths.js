@@ -5,7 +5,8 @@ module.exports = {
 	root: appRoot,
 	html: [
 		appRoot + "**/*.html",
-    "!" + appRoot + "**/*.partial.html"
+    "!" + appRoot + "**/partials/**",
+		"!" + appRoot + "**/templates/**",
 	],
 	css: appRoot + "assets/styles/**/*.css",
 	sass: appRoot + "assets/styles/**/*.scss",

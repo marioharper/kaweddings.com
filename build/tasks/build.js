@@ -1,4 +1,5 @@
 const gulp = require('gulp'),
+  contentful = require('contentful'),
   sass = require('gulp-sass'),
   browserSync = require('browser-sync'),
   runSequence = require('run-sequence'),
@@ -13,44 +14,39 @@ const gulp = require('gulp'),
   merge = require('merge-stream'),
   concat = require('gulp-concat');
 
+const client = contentful.createClient({
+  space: process.env.contentfulSpace,
+  accessToken: process.env.contentfulAccessToken,
+});
+
 // compiles nunjucks
 gulp.task('build-html', function () {
-  var galleries = {
-    'sarah-and-daniel': {
-      name: 'Sarah & Daniel',
-      coverIdx: 4,
-      images: [
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/1-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/1-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/2-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/2-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/3-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/3-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/4-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/4-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/5-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/5-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/6-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/6-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/7-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/7-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/8-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/8-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/9-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/9-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/10-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/10-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/11-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/11-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/12-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/12-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/13-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/13-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/14-1000x1499.jpg', width: 1000, height: 1499 }, small: { src: '/assets/images/gallery/sarah-and-daniel/14-300x449.jpg', width: 300, height: 449 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/15-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/15-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/16-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/16-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/17-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/17-300x450.jpg', width: 300, height: 450 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/18-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/18-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/19-1000x666.jpg', width: 1000, height: 666 }, small: { src: '/assets/images/gallery/sarah-and-daniel/19-300x200.jpg', width: 300, height: 200 } },
-        { large: { src: '/assets/images/gallery/sarah-and-daniel/20-1000x1500.jpg', width: 1000, height: 1500 }, small: { src: '/assets/images/gallery/sarah-and-daniel/20-300x450.jpg', width: 300, height: 450 } }
-      ]
-    }};
+  return client.getEntries({
+    'content_type': '7leLzv8hW06amGmke86y8G',
+  }).then((entries) => {
+    const galleries = entries.items;
 
-  return gulp.src(paths.html)
-    .pipe(nunjucksRender({
-      path: ['src'],
-      data: {
-        galleries: galleries
-      }
-    }))
-    .pipe(gulp.dest(paths.output));
+    galleries.forEach((gallery) => {
+      gulp.src('src/templates/gallery.html')
+        .pipe(nunjucksRender({
+          path: ['src'],
+          data: {
+            gallery: gallery
+          }
+        }))
+        .pipe(rename(gallery.fields.slug + '.html'))
+        .pipe(gulp.dest(paths.output + 'gallery/'))
+    });
+
+    return gulp.src(paths.html)
+      .pipe(nunjucksRender({
+        path: ['src'],
+        data: {
+          galleries: galleries
+        }
+      }))
+      .pipe(gulp.dest(paths.output));
+  });
 });
 
 gulp.task('build-img', function () {

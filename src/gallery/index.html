@@ -17,13 +17,18 @@
   <hr />
 
   <main class="content-wrapper">
-    <a class="img-link" href="/gallery/sarah-and-daniel.html">
-      <img src={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.src}} 
-        width={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.width}} 
-        height={{galleries['sarah-and-daniel'].images[galleries['sarah-and-daniel'].coverIdx].small.height}} />
+
+    {% for gallery in galleries %}
+    <a class="img-link" href={{"/gallery/"+gallery.fields.slug+".html"}}>
+      <img src={{gallery.fields.coverImage.fields.file.url + '?w=300'}} width="300" />
     </a>
-    
-    <p>{{galleries['sarah-and-daniel'].name}}</p>
+
+    <p class="gallery-title">
+      {{gallery.fields.title}} <br/>
+      <small>{{gallery.fields.eventDate}}</small>
+    </p>
+    {% endfor %}
+
   </main>
 
   {% include "partials/_footer-scripts.html" %}
