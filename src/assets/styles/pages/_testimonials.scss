@@ -1,0 +1,69 @@
+body#testimonials {
+  .testimonials {
+    .testimonial {
+      margin-bottom: 60px;
+
+      @media (#{$bp-larger-than-tablet}){
+        margin-bottom: 120px;
+      }
+
+      &:nth-child(odd) {
+        .image {
+          order: 2;
+        }
+      }
+
+      .testimonial-head {
+        display: flex;
+
+        .image {
+          display: none;
+          border-radius: 10%;
+
+          @media (#{$bp-larger-than-tablet}){
+            display: inline-block;
+          }
+        }
+
+        blockquote {
+          background: #f9f9f9;
+          border-left: 10px solid #ccc;
+          margin: 1.5em 10px;
+          padding: 0.5em 10px;
+          quotes: "\201C""\201D""\2018""\2019";
+        }
+        
+        blockquote:before {
+          color: #ccc;
+          font-family: Georgia, serif;
+          content: "\201C";
+          font-size: 4em;
+          line-height: 0.1em;
+          margin-right: 0.25em;
+          vertical-align: -0.4em;
+        }
+
+        blockquote p {
+          display: inline;
+        }
+      }
+
+      .testimonial-foot {
+        .description {
+          display: none;
+          text-indent: 50px;
+          margin-top: 40px;
+
+          @media (#{$bp-larger-than-tablet}){
+            display: block;
+          }
+        }
+
+        .by {
+          margin-top: 0;
+          text-align: right;
+        }
+      }
+    }
+  }  
+}

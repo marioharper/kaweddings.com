@@ -4,9 +4,9 @@ html {
   text-rendering: optimizeLegibility;
   font-family: 'Open Sans', sans-serif;
   font-weight: 100;
-  line-height: 30px;
+  line-height: 1.75;
   color: #090909;
-  background-color: white;
+  background-color: $white;
   margin: 0;
   height: 100%;
 }
@@ -16,7 +16,6 @@ body {
   padding: 0;
   font-size: 1.6rem;
   color: #090909;
-  line-height: 26px;
   font-style: normal;
   font-weight: 300;
 
@@ -35,7 +34,6 @@ body {
     font-weight: 400;
     font-style: normal;
     margin-bottom: 20px;
-    line-height: 60px;
   }
 
   p {

@@ -14,39 +14,101 @@ const gulp = require('gulp'),
   merge = require('merge-stream'),
   concat = require('gulp-concat');
 
+const cache = {
+  galleries: {
+    loaded: false,
+    data: [],
+  }, 
+  testimonials: {
+    loaded: false,
+    data: [],
+  },
+}
+
 const client = contentful.createClient({
   space: process.env.contentfulSpace,
   accessToken: process.env.contentfulAccessToken,
 });
 
-// compiles nunjucks
-gulp.task('build-html', function () {
+const getGalleries = function (context) {
+  if (cache.galleries.loaded) {
+    console.log('Galleries loaded from cache.');
+    return Promise.resolve(Object.assign({}, context, {
+      galleries: cache.galleries.data
+    }));
+  }
+
+  console.log('Fetching galleries.');
   return client.getEntries({
     'content_type': '7leLzv8hW06amGmke86y8G',
   }).then((entries) => {
-    const galleries = entries.items;
+    cache.galleries.loaded = true;
+    cache.galleries.data = entries.items;
 
-    galleries.forEach((gallery) => {
-      gulp.src('src/templates/gallery.html')
-        .pipe(nunjucksRender({
-          path: ['src'],
-          data: {
-            gallery: gallery
-          }
-        }))
-        .pipe(rename(gallery.fields.slug + '.html'))
-        .pipe(gulp.dest(paths.output + 'gallery/'))
-    });
+    return Promise.resolve(Object.assign({}, context, {
+      galleries: entries.items
+    }));
+  });
+}
 
-    return gulp.src(paths.html)
+const createGalleryPages = function (context) {
+  context.galleries.forEach((gallery) => {
+    return gulp.src('src/templates/gallery.html')
       .pipe(nunjucksRender({
         path: ['src'],
         data: {
-          galleries: galleries
+          gallery: gallery
         }
       }))
-      .pipe(gulp.dest(paths.output));
+      .pipe(rename(gallery.fields.slug + '.html'))
+      .pipe(gulp.dest(paths.output + 'gallery/'));
   });
+
+  return Promise.resolve(context);
+}
+
+const getTestimonials = function (context) {
+  if (cache.testimonials.loaded) {
+    console.log('Testimonials loaded from cache.');
+    return Promise.resolve(Object.assign({}, context, {
+      testimonials: cache.testimonials.data
+    }));
+  }
+
+  console.log('Fetching testimonials.');
+  return client.getEntries({
+    'content_type': 'testimonial',
+  }).then((entries) => {
+    cache.testimonials.loaded = true;
+    cache.testimonials.data = entries.items;
+
+    return Promise.resolve(Object.assign({}, context, {
+      testimonials: entries.items
+    }));
+  });
+}
+
+// compiles nunjucks
+gulp.task('build-html', function () {
+  const context = {
+    galleries: cache.galleries,
+    testimonials: cache.testimonials
+  };
+
+  return getGalleries(context)
+    .then(createGalleryPages)
+    .then(getTestimonials)
+    .then((context) => {
+      return gulp.src(paths.html)
+        .pipe(nunjucksRender({
+          path: ['src'],
+          data: {
+            galleries: context.galleries,
+            testimonials: context.testimonials
+          }
+        }))
+        .pipe(gulp.dest(paths.output));
+    });
 });
 
 gulp.task('build-img', function () {

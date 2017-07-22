@@ -1,7 +1,7 @@
 body#about {
   section.about {
     text-align: center;
-    padding-top: 0;
+    padding-top: 40px;
     margin-bottom: 100px;
     
     @media (#{$bp-larger-than-tablet}){
