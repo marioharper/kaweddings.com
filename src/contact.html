@@ -4,9 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title> Kelsey Anne Weddings - Wedding Planning</title>
-  <meta name="description" content="Kelsey Anne Weddings">
-  
-  {% include "partials/_header-scripts.html" %}
+  <meta name="description" content="Kelsey Anne Weddings"> {% include "partials/_header-scripts.html" %}
 
 </head>
 
@@ -72,7 +70,7 @@
       var serviceInput = document.getElementById('service');
       var service = getQuery('service');
 
-      if(service) {
+      if (service) {
         var prefillService = "";
 
         switch (service) {
@@ -82,8 +80,8 @@
           case 'coordination':
             prefillService = "Coordination";
             break;
-          case 'full': 
-            prefillService = "Complete Experience";
+          case 'custom':
+            prefillService = "Custom Package";
         }
 
         serviceInput.value = prefillService;
